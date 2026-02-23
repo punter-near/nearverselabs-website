@@ -1,508 +1,243 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
-    <title>Nearverselabs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nearverse Labs — Intelligent Automation for Blockchain Ops</title>
 
-    <style>
-        @font-face {
-            font-family: ProximaNova;
-            src: url('./font/Proxima\ Nova\ Font.otf');
-        }
-
-        @font-face {
-            font-family: MrEavesXLBold;
-            src: url('./font//MrEavesXLModOT-Bold.ttf');
-        }
-
-        @font-face {
-            font-family: MrEavesXlHeavy;
-            src: url('./font//MrEavesXLModOT-Heavy.ttf');
-        }
-
-        body {
-            background-image: linear-gradient(to right, #03141C, #0B5463);
-            margin: 0px;
-        }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        li {
-            display: inline;
-        }
-
-        li a {
-            text-decoration-line: none;
-            color: #FFFFFF;
-            margin-left: 17.5px;
-            margin-right: 17.5px;
-            font-family: ProximaNova;
-        }
-
-        #divNav {
-            display: flex;
-            flex-direction: row;
-        }
-
-        #divImgA {
-            width: 20%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #divNavA {
-            width: 60%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #divExtraA {
-            width: 20%;
-        }
-
-        #divB {
-            background-image: url('./img/elements.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-        }
-
-        #divBMiniA,
-        #divBMiniB {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #divBMiniA h1,
-        #divBMiniB h1 {
-            font-family: MrEavesXlHeavy;
-            color: #86EDFC;
-            font-size: 48px;
-            margin-top: 80px;
-            margin-bottom: 0px;
-        }
-
-        #divBMiniA p {
-            font-family: ProximaNova;
-            color: #FFFFFF;
-            width: 480px;
-            text-align: center;
-            line-height: 25px;
-        }
-
-        #divBMiniA button {
-            background-image: linear-gradient(to right, #58C5C3, #216D86);
-            border-width: 0px;
-            color: #FFFFFF;
-            font-family: ProximaNova;
-            border-radius: 25px;
-            padding: 10px;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-
-        #divBMiniBB {
-            display: flex;
-            flex-direction: row;
-        }
-
-        #divBMiniBBB {
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        #divBMiniBBB h1 {
-            color: #A6DCE3;
-            font-family: ProximaNova;
-            font-weight: bold;
-            font-size: 30px;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            text-align: center;
-        }
-
-        #divBMiniBBB p {
-            color: #FFFFFF;
-            font-family: ProximaNova;
-            font-size: 14px;
-            margin-top: 8px;
-            text-align: center;
-        }
-
-        #divC {
-            background-image: linear-gradient(to right, #0B5463, #03141C);
-            padding-top: 50px;
-            padding-bottom: 80px;
-        }
-
-        #divCC {
-            background-image: url('./img/twoArrows.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 371;
-        }
-
-        #divCCC {
-            padding-top: 85px;
-        }
-
-        #divCCC h1 {
-            color: #B8F1EF;
-            font-family: MrEavesXlHeavy;
-            font-weight: bold;
-            font-size: 30px;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            text-align: center;
-        }
-
-        #divCCC p {
-            color: #B8F1EF;
-            font-family: ProximaNova;
-            font-size: 14px;
-            margin-top: 25px;
-            text-align: center;
-        }
-
-        #divDD {
-            width: 70%;
-            margin-left: auto;
-            margin-right: auto;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            flex-direction: row;
-        }
-
-        #tableP {
-            font-family: ProximaNova;
-            font-size: 14px;
-            color: #FFFFFF;
-            margin-top: 50px;
-            line-height: 21px;
-        }
-
-        #divFF {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: row;
-            margin-left: 10%;
-            width: 80%;
-        }
-
-        #para {
-            color: #FFFFFF;
-            font-family: ProximaNova;
-            font-size: 14px;
-            text-align: start;
-            width: 300px;
-            line-height: 20px;
-        }
-
-        #butt {
-            background-image: linear-gradient(to right, #58C5C3, #216D86);
-            border-width: 0px;
-            color: #FFFFFF;
-            font-family: ProximaNova;
-            border-radius: 25px;
-            padding: 10px;
-            padding-left: 40px;
-            padding-right: 40px;
-            cursor: pointer;
-        }
-
-        #divI {
-            padding-top: 70px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        #butt:hover{
-        	background-image: linear-gradient(to right, #329B99, #155368);
-        }
-
-        #divNavA ul a:hover{
-	        color: #92D3E2;
-        }
-
-    </style>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
-    <div id='divA'>
-        <div id='divNav'>
-            <div id='divImgA'>
-                <img src="./img/logo.png" style="aspect-ratio: 216/85; height: 70px;" />
-            </div>
-            <div id='divNavA'>
-                <ul>
-                    <li><a style="color: #92D3E2; font-weight: bold;" href="#divA">Home</a></li>
-                    <li><a href="#divF">Vulcan</a></li>
-                    <li><a href="#divAA">Amplify</a></li>
-                    <li><a href="#divU">Unison</a></li>
-                    <li><a href="#divH">Our Team</a></li>
-                    <li><a href="#divI">Contact us</a></li>
-                </ul>
-            </div>
-            <div id='divExtraA'></div>
-        </div>
-        <div id='divB' style="aspect-ratio: 1399/869; width: 100%;">
-            <div id='divBMiniA'>
-                <h1>Building on-chain future</h1>
-                <p>Delivering blockchain B2B & B2C products for <strong>5 years</strong></p>
-                <button onclick="location.href='#divD'" id = 'butt'>Get Started</button>
-            </div>
-            <div id='divBMiniB' style="margin-top: 230px;">
-                <h1 style="font-size: 28px; ">The Steady Progress</h1>
 
-                <div id='divBMiniBB'>
-                    <div id='divBMiniBBB'>
-                        <h1>25K</h1>
-                        <p>Registered Wallets</p>
-                    </div>
-                    <div id='divBMiniBBB'>
-                        <h1>40+</h1>
-                        <p>Projects Partnered With</p>
-                    </div>
-                    <div id='divBMiniBBB'>
-                        <h1>4</h1>
-                        <p>Active Blockchains</p>
-                    </div>
-                </div>
-            </div>
+<!-- STARFIELD BACKGROUND -->
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<header class="site-header" data-reveal>
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="Nearverse Labs Home">
+      <img class="logo-img" src="assets/img/logo.png" alt="Nearverse Labs" />
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="solutions.html">Solutions</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-btn" href="contact.html">Get in Touch</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content" data-reveal>
+        <h1>
+          Intelligent Automation<br />
+          for Blockchain Ecosystems
+        </h1>
+
+        <p>
+          Bridging enterprise-grade automation with blockchain-native systems —
+          enabling treasury, governance, and incentive operations at scale.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn primary" href="solutions.html">Our Solutions</a>
+          <a class="btn ghost" href="case-studies.html">Case Studies</a>
         </div>
+      </div>
     </div>
-    <div id='divC'>
-        <div id='divCC'>
-            <div id='divCCC'>
-                <h1>Nearverse Labs</h1>
-                <p style="margin-top: 15px; width: 500px; line-height: 20px; margin-left: auto; margin-right: auto;">Crafting Your Dream Crypto Solution - Tailored to Perfection</p>
-            </div>
+  </section>
+
+  <!-- OUR PRODUCTS / SOLUTIONS -->
+  <section class="section-dark" data-reveal>
+    <div class="container products-grid">
+
+      <div class="products-left">
+        <h2>Our Solutions</h2>
+        <h3>Enterprise Automation for Web3 Infrastructure</h3>
+
+        <ul class="feature-list">
+          <li>
+            <strong>Interoperable Infrastructure</strong>
+            <span>Seamless cross-chain execution and automated reconciliation for L1/L2 ecosystems.</span>
+          </li>
+
+          <li>
+            <strong>Automated Financial Operations</strong>
+            <span>End-to-end treasury management with audit-ready reporting and automated disbursements.</span>
+          </li>
+
+          <li>
+            <strong>Programmable Distributions</strong>
+            <span>Scalable reward orchestration with built-in anti-abuse logic and transparent on-chain tracking.</span>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="grant-card" data-reveal>
+        <h4>Grants & Partnerships</h4>
+
+        <!-- LOGOS (from assets/img) -->
+        <div class="grant-logos" aria-label="Partners">
+          <img class="logo-icp" src="assets/img/IC-logo.svg" alt="Internet Computer" loading="lazy" />
+          <img class="logo-bsl" src="assets/img/BSL-logo.svg" alt="Blocksmith Labs" loading="lazy" />
+          <img class="logo-near" src="assets/img/NF-logo.svg" alt="NEAR Foundation" loading="lazy" />
         </div>
+
+        <p class="grant-subtext">
+          Secured funding and partnered with ecosystems to ship automation-led infrastructure.
+        </p>
+
+        <ul class="grant-list">
+          <li>NFT Infrastructure</li>
+          <li>SocialFi & FanTech</li>
+          <li>Tokenomics Automation</li>
+          <li>Community Governance</li>
+        </ul>
+
+        <a class="btn primary" href="case-studies.html">View Case Studies</a>
+      </aside>
+
     </div>
-    <div id = 'divD'>
-        <div id = 'divDD' style="margin-top: 80px;">
-            <div id='divCCC' style="padding-top: 0px; flex: 1;">
-                <h1 style="font-size: 20px;">Innovative Tools</h1>
-                <p style="margin-top: 15px; width: 230px; line-height: 20px; margin-left: auto; margin-right: auto;">We identify & solve problems that are often overlooked</p>
-            </div>
-            <div id = 'divDDImg' style="display: flex; flex: 1; justify-content: center; align-items: center;">
-                <img src="./img/1.png" style="aspect-ratio: 350/350; width: 50%;" />
-            </div>
-        </div>
-        <div id = 'divDD'>
-            <div id = 'divDDImg' style="display: flex; flex: 1; justify-content: center; align-items: center;">
-                <img src="./img/2.png" style="aspect-ratio: 350/350; width: 50%;" />
-            </div>
-            <div id='divCCC' style="padding-top: 0px; flex: 1;">
-                <h1 style="font-size: 20px;">Community-oriented Innovation</h1>
-                <p style="margin-top: 15px; width: 250px; line-height: 20px; margin-left: auto; margin-right: auto;">We build Apps that rally crypto communities</p>
-            </div>
-        </div>
-        <div id = 'divDD'>
-            <div id='divCCC' style="padding-top: 0px; flex: 1;">
-                <h1 style="font-size: 20px;">Consulting/ Helpful support</h1>
-                <p style="margin-top: 15px; width: 230px; line-height: 20px; margin-left: auto; margin-right: auto;">We are open to providing consulting if our interests align</p>
-            </div>
-            <div id = 'divDDImg' style="display: flex; flex: 1; justify-content: center; align-items: center;">
-                <img src="./img/3.png" style="aspect-ratio: 350/350; width: 50%;" />
-            </div>
-        </div>
-        <br>
+  </section>
+
+  <!-- WHAT WE DELIVER (UPGRADED) -->
+  <section class="section deliver" data-reveal>
+    <div class="container">
+
+      <div class="deliver-head" data-reveal>
+        <h2>What We Deliver</h2>
+        <p class="deliver-sub">
+          Production-grade automation foundations for Web3 operations — engineered for reliability,
+          observability, and compliance.
+        </p>
+      </div>
+
+      <div class="deliver-cards">
+
+        <article class="deliver-card" data-reveal>
+          <span class="deliver-tag">Ops Automation</span>
+          <div class="deliver-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M12 2l9 4.5v11L12 22 3 17.5v-11L12 2zm0 2.2L5 7v9.4l7 3.5 7-3.5V7l-7-2.8z"></path>
+              <path d="M8 11h8v2H8v-2zm0 4h5v2H8v-2z"></path>
+            </svg>
+          </div>
+          <h3>Treasury & Payroll Automation</h3>
+          <p>Approval workflows, reconciliation, audit-ready reporting and system integrations.</p>
+          <ul class="deliver-bullets">
+            <li>Policy-based approvals & multi-sig flows</li>
+            <li>Disbursements, payouts & payroll runs</li>
+            <li>Finance-ready reporting & evidence trails</li>
+          </ul>
+        </article>
+
+        <article class="deliver-card" data-reveal>
+          <span class="deliver-tag">Incentives</span>
+          <div class="deliver-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M12 2a7 7 0 0 0-7 7c0 2.6 1.4 4.8 3.5 6v7h7v-7c2.1-1.2 3.5-3.4 3.5-6a7 7 0 0 0-7-7zm3.2 11.3-.7.4V20h-5v-6.3l-.7-.4A5 5 0 1 1 15.2 13.3z"></path>
+              <path d="M10.5 9.5h3v2h-3v-2z"></path>
+            </svg>
+          </div>
+          <h3>Incentive & Engagement Operations</h3>
+          <p>Reward engines, eligibility logic, anti-abuse controls and reporting layers.</p>
+          <ul class="deliver-bullets">
+            <li>Eligibility rules, segmentation & caps</li>
+            <li>Anti-abuse logic: sybil, rate limits, fraud flags</li>
+            <li>Transparent on-chain tracking & analytics hooks</li>
+          </ul>
+        </article>
+
+        <article class="deliver-card" data-reveal>
+          <span class="deliver-tag">Governance</span>
+          <div class="deliver-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M12 2a4 4 0 0 0-4 4c0 1.3.6 2.5 1.5 3.2L4 14.7V22h6v-3h4v3h6v-7.3l-5.5-5.5A4 4 0 0 0 16 6a4 4 0 0 0-4-4zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm-4.6 8.1L11 15.7V20H6v-4.5l1.4-1.4zm10.6 3.4V20h-5v-4.3l3.6-3.6 1.4 1.4z"></path>
+            </svg>
+          </div>
+          <h3>Governance & Workflow Orchestration</h3>
+          <p>Proposal lifecycle, execution tracking and compliance-ready logs.</p>
+          <ul class="deliver-bullets">
+            <li>Proposal intake → execution orchestration</li>
+            <li>Operational SLAs, alerts & audit checkpoints</li>
+            <li>Compliance-ready logs & change history</li>
+          </ul>
+        </article>
+
+      </div>
     </div>
+  </section>
 
-   
+  <!-- STATS -->
+  <section class="stats" data-reveal>
+    <div class="container">
+      <h2 class="stats-title" data-reveal>Our Achievements</h2>
 
-    <div id = 'divF'>
-        
-        <div id='divCCC'>
-            <h1 style="font-size: 28px; ">A few snippets of our innovation journey</h1>
-            <br><br>
-            <h1 style="font-size: 26px;">Vulcan Platform</h1>
-            <p style="color: #FFFFFF; margin-top: 15px;">Allowlist management Platform</p>
+      <div class="stats-grid">
+        <div class="stat" data-reveal>
+          <h3>$500K+</h3>
+          <p>Funded Initiatives</p>
         </div>
-        <div id = 'divFF'>
-            <div style="flex: 1.5; display: flex; justify-content: center; align-items: center;">
-                <img src="./img/vulcan.png" style="aspect-ratio: 600/400; width: 60%;" />
-            </div>
-            <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <p id = 'para' style="align-self: flex-start;">Vulcan platform that allows NEAR NFT/DeFi projects to manage their Allowlist easily. The platform users can claim and manage all project Whitelists in one place. It is used by 5000+ unique wallets and has served 25+ projects.</p>
-                <!-- <button  onclick="window.open('https://www.vulcanapp.io/', '_blank')" id = 'butt' style="align-self: flex-start;">Launch App</button> -->
-            </div>
+
+        <div class="stat" data-reveal>
+          <h3>6</h3>
+          <p>Automation Platforms</p>
         </div>
+
+        <div class="stat" data-reveal>
+          <h3>50K+</h3>
+          <p>Users Impacted</p>
+        </div>
+
+        <div class="stat" data-reveal>
+          <h3>~100</h3>
+          <p>Days Saved</p>
+        </div>
+      </div>
     </div>
-    
-    <div id = 'divAA'>
-        <div id='divCCC'>
-            <h1 style="font-size: 26px;">Amplify Platform - ICP</h1>
-            <p style="color: #FFFFFF; margin-top: 15px;">Social-Fi Application</p>
-        </div>
+  </section>
 
-        <div id = 'divFF'>
-            <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-               <div>
-                    <p id = 'para' style="align-self: flex-start;">Amplify, a Social-Fi platform, enables projects and thought leaders to boost engagement on their social media posts by rewarding interacting users. Version 1.0 currently enhances Twitter posts, with plans to expand into additional Web2 and Web3 social media applications. It is being built with support from DFinity Foundation (ICP Blockchain).</p>
-                  <!--  <button  onclick="window.open('https://amplify-icp.com/', '_blank')" id = 'butt' style="align-self: flex-start;">Launch App</button> -->
-                </div>
-                
-            </div>
+</main>
 
-            <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
-                <img src="./img/Amplify.png" style="aspect-ratio: 500/400; width: 55%;" />
-            </div>
-        </div>
-    </div>
+<footer class="site-footer" data-reveal>
+  <div class="container footer-grid">
 
+    <div class="footer-brand">
+      <img class="footer-logo" src="assets/img/bottomlogo.png" alt="Nearverse Labs" />
+      <p>Driving Intelligent Automation within the Blockchain Ecosystem.</p>
 
-
-    <div id = 'divU'>
-        <div id='divCCC'>
-            <h1 style="font-size: 26px;">Unison Platform</h1>
-            <p style="color: #FFFFFF; margin-top: 15px;">Collab Automation platform</p>
-        </div>
-        <div id = 'divFF'>
-            <div style="flex: 1.5; display: flex; justify-content: center; align-items: center;">
-                <img src="./img/Unison.png" style="aspect-ratio: 600/400; width: 60%;" />
-            </div>
-            
-            <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <p id = 'para' style="align-self: flex-start;">Unison Collab Automation Platform is an attempt to save project time and resources by creating an easy-to-use dashboard and a Discord Bot for NFT projects to request/accept collaborations, start raffles, and auto-assign Allowlist roles to winners of raffles. Besides automating collaborations, Unison aids collab managers in finding new projects in a unified dashboard.</p>
-               <!-- <button  onclick="window.open('https://unison.nearverselabs.com/', '_blank')" id = 'butt' style="align-self: flex-start;">Launch App</button> -->
-            </div>
-        </div>
-    </div>
-
-    <div id = 'divG'>
-        <div id='divCCC'>
-            <h1 style="font-size: 26px;">Our NFT Collection</h1>
-            <p style="color: #FFFFFF; margin-top: 15px;">Launched on Utopia LaunchPad</p>
-        </div>
-        <div id = 'divFF'>
-            <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <table>
-                    <tr>
-                        <td style="font-family: MrEavesXLBold; color: #FFFFFF; font-size: 16px; padding: 8px;">Blockchain</td>
-                        <td style="font-family: ProximaNova; color: #76E982; font-weight: bold; font-size: 15px; padding: 8px; padding-left: 20px;">Near Protocol</td>
-                    </tr>
-                    <tr>
-                        <td style="font-family: MrEavesXLBold; color: #FFFFFF; font-size: 16px; padding: 8px">Collection</td>
-                        <td style="font-family: ProximaNova; color: #FFFFFF; font-size: 14px; padding: 8px; padding-left: 20px;">2000 Generative Images</td>
-                    </tr>
-                    <tr>
-                        <td style="font-family: MrEavesXLBold; color: #FFFFFF; font-size: 16px; padding: 8px">Launch Date</td>
-                        <td style="font-family: ProximaNova; color: #FFFFFF; font-size: 14px; padding: 8px; padding-left: 20px;">June 18, 2022</td>
-                    </tr>
-                </table>
-                <div style="margin-top: 20px;">
-                  <!--  <button  onclick="window.open('https://www.tradeport.xyz/near/collection/rocketbois.neartopia.near/', '_blank')" id = 'butt' style="align-self: flex-start;">View Collection</button> -->
-                  <!--  <a href= "https://stake.nearverselabs.com/" target="_blank" style="color: #FFFFFF; font-family: ProximaNova; margin-left: 20px; font-size: 14px;">Staking</a> -->
-                </div> 
-            </div>
-            <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
-                <img src="./img/nft.png" style="aspect-ratio: 400/400; width: 50%;" />
-            </div>
-        </div>
-    </div>
-
-    <div id = 'divH'>
-        <div id='divCCC'>
-            <h1 style="font-size: 26px;">Meet Our Team</h1>
-            <p style="color: #FFFFFF; margin-top: 15px; width: 350px; line-height: 20px; margin-left: auto; margin-right: auto;">Meet the team that's at the forefront of crypto innovation</p>
-        </div>
-
-        <div style="width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 25px; display: flex; flex-direction: row;">
- 
-            <div style="width: 30%; display: flex;  margin-left: 5%; margin-right: 5%; flex-direction: column; justify-content: center; align-items: center;">
-                <img src="./img/Tej.PNG" style="aspect-ratio: 350/350; width: 75%;" />
-                <div id='divCCC' style="padding-top: 40px;">
-                    <h1 style="font-size: 24px;">Tej</h1>
-                    <p style="color: #FFFFFF; margin-top: 15px;">Project Manager</p>
-                </div>
-            </div> 
-            <div style="width: 30%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <img src="./img/Raj.PNG" style="aspect-ratio: 350/350; width: 75%;" />
-                <div id='divCCC' style="padding-top: 40px;">
-                    <h1 style="font-size: 24px;">Raj</h1>
-                    <p style="color: #FFFFFF; margin-top: 15px;">UI/UX Lead</p>
-                </div>
-            </div>
-            <div style="width: 30%; display: flex;  margin-left: 5%; margin-right: 5%; flex-direction: column; justify-content: center; align-items: center;">
-                <img src="./img/Demilo.PNG" style="aspect-ratio: 350/350; width: 75%;" />
-                <div id='divCCC' style="padding-top: 40px;">
-                    <h1 style="font-size: 24px;">Demilo Alanis</h1>
-                    <p style="color: #FFFFFF; margin-top: 15px;">Strategic Advisor</p>
-                </div>
-            </div>  
-        </div>
-        <br>
-        <div style="width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 25px; display: flex; flex-direction: row;">
- 
-            <div style="width: 30%; display: flex;  margin-left: 5%; margin-right: 5%; flex-direction: column; justify-content: center; align-items: center;">
-                <img src="./img/Saswath.png" style="aspect-ratio: 350/350; width: 75%;" />
-                <div id='divCCC' style="padding-top: 40px;">
-                    <h1 style="font-size: 24px;">Saswath</h1>
-                    <p style="color: #FFFFFF; margin-top: 15px;">Frontend Developer</p>
-                </div>
-            </div> 
-            <div style="width: 30%; display: flex;  margin-left: 5%; margin-right: 5%; flex-direction: column; justify-content: center; align-items: center;">
-                <img src="./img/Suresh.png" style="aspect-ratio: 350/350; width: 75%;" />
-                <div id='divCCC' style="padding-top: 40px;">
-                    <h1 style="font-size: 24px;">Suresh Gavara</h1>
-                    <p style="color: #FFFFFF; margin-top: 15px;">HR Manager</p>
-                </div>
-            </div> 
-        </div>
-        <br>
-    </div>
-    <div id = 'divI'>
-        <img src = "./img/logo.png" style="aspect-ratio: 259/96; width: 250px;" />
-
-        <div onclick="window.open('https://discord.gg/WREqUgTW7M', '_blank')" style="margin-top: 30px; cursor:pointer; display: flex; flex-direction: row;">
-            <div style="display: flex; justify-content: center; align-items: center;  margin-right: 40px;">
-                <a style="font-family: ProximaNova; font-size: 13px; color: #FFFFFF; margin-right: 15px; text-decoration-line: none;">Discord</a>
-                <img src = './img/discord.png' style="height: 60%;" />
-            </div>
-            <div onclick="window.open('https://twitter.com/NearverseLabs', '_blank')" style="cursor:pointer; display: flex; justify-content: center; align-items: center;">
-                <a style="font-family: ProximaNova; font-size: 13px; color: #FFFFFF; margin-right: 15px; text-decoration-line: none;">Twitter</a>
-                <img src = './img/twitter.png' style="height: 60%;"  />
-            </div>   
-            </div>
-
-        <hr style="color: #FAFAFF; width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 20px;" />
-        <div style="display: flex; flex-direction: row; width: 80%; margin-left: 10%; margin-right: 10%; margin-bottom: 60px;">
-            <div style="width: 50%; display: flex; justify-content: flex-start; align-items: center">
-                <p style="font-family: ProximaNova; font-size: 15px; color: #FFFFFF;">® 2025 Nearverse Labs Pvt. Ltd.||</p>
-            </div>
-            <div style="width: 50%; display: flex; justify-content: flex-end; align-items: center;">
-                <p style="font-family: ProximaNova; font-size: 15px; color: #FFFFFF;">Address: S NO 148 /3 TF 304, ECMPS COLONY, Sujatha Nagar, Visakhapatnam, India-530051</p>
-            </div>
-            <div style="width: 50%; display: flex; justify-content: flex-end; align-items: center;">
-                <p style="font-family: ProximaNova; font-size: 15px; color: #FFFFFF;">email: team@nearverselabs.com</p>
-            </div>
-        </div>        
+      <div class="legal-links">
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="refund.html">Refund Policy</a>
+      </div>
     </div>
 
-<footer style="text-align:center; padding:10px;">
-  <p style="color:white;">
-    <a href="terms.html" style="color:white;">Terms & Conditions</a> |
-    <a href="privacy.html" style="color:white;">Privacy Policy</a> |
-    <a href="refund.html" style="color:white;">Refund Policy</a> |
-    <a href="contact.html" style="color:white;">Contact Us</a>
-  </p>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="solutions.html">Solutions</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <a href="mailto:info@nearverselabs.com">info@nearverselabs.com</a>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © <span id="year"></span> Nearverse Labs. All rights reserved.
+  </div>
 </footer>
 
+<script src="assets/js/main.js"></script>
 </body>
 </html>
