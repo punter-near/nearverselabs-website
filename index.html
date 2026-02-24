@@ -20,17 +20,29 @@
       <img class="logo-img" src="assets/img/logo.png" alt="Nearverse Labs" />
     </a>
 
-    <nav class="nav-links" aria-label="Primary">
-      <a href="solutions.html">Solutions</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="contact.html">Contact</a>
+    <button class="nav-toggle" type="button"
+      aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="burger" aria-hidden="true"></span>
+    </button>
+
+    <!-- Desktop links -->
+    <nav class="nav-links nav-links--desktop" aria-label="Primary">
+      <a href="#solutions">Solutions</a>
+      <a href="#case-studies">Case Studies</a>
       <a class="nav-btn" href="contact.html">Get in Touch</a>
     </nav>
   </div>
+
+  <!-- Mobile dropdown -->
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <nav class="mobile-menu__links" aria-label="Mobile Primary">
+      <a href="#solutions" class="mobile-link">Solutions</a>
+      <a href="#case-studies" class="mobile-link">Case Studies</a>
+      <a href="contact.html" class="mobile-link">Get in Touch</a>
+    </nav>
+  </div>
 </header>
-
 <main>
-
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-grid">
@@ -46,15 +58,15 @@
         </p>
 
         <div class="hero-cta">
-          <a class="btn primary" href="solutions.html">Our Solutions</a>
-          <a class="btn ghost" href="case-studies.html">Case Studies</a>
+          <a class="btn primary" href="#solutions">Our Solutions</a>
+          <a class="btn ghost" href="#case-studies">Case Studies</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- OUR PRODUCTS / SOLUTIONS -->
-  <section class="section-dark" data-reveal>
+  <section id="solutions" class="section-dark" data-reveal>
     <div class="container products-grid">
 
       <div class="products-left">
@@ -107,7 +119,7 @@
   </section>
 
   <!-- WHAT WE DELIVER (UPGRADED) -->
-  <section class="section deliver" data-reveal>
+  <section id="case-studies" class="section deliver" data-reveal>
     <div class="container">
 
       <div class="deliver-head" data-reveal>
@@ -294,9 +306,8 @@
       <!-- Middle: Quick links -->
       <div class="footer-col">
         <div class="footer-title">Quick Links</div>
-        <a class="footer-link" href="solutions.html">Solutions</a>
-        <a class="footer-link" href="case-studies.html">Case Studies</a>
-        <a class="footer-link" href="contact.html">Contact</a>
+        <a class="footer-link" href="#solutions">Solutions</a>
+        <a class="footer-link" href="#case-studies">Case Studies</a>
       </div>
 
       <div class="footer-divider" aria-hidden="true"></div>

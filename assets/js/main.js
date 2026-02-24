@@ -1,6 +1,7 @@
 // ===== Starfield (twinkle + parallax + shooting stars) =====
 const canvas = document.getElementById("starfield");
 
+
 if (!canvas) {
   console.warn("Starfield canvas not found.");
 } else {
@@ -149,3 +150,34 @@ revealEls.forEach((el) => io.observe(el));
 // ===== Footer year =====
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ===== Mobile nav toggle =====
+const header = document.querySelector(".site-header");
+const toggleBtn = document.querySelector(".nav-toggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if (header && toggleBtn && mobileMenu) {
+  const closeMenu = () => {
+    header.classList.remove("is-open");
+    toggleBtn.setAttribute("aria-expanded", "false");
+    mobileMenu.setAttribute("aria-hidden", "true");
+  };
+
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("is-open");
+    toggleBtn.setAttribute("aria-expanded", String(isOpen));
+    mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+  });
+
+  // Close after clicking a mobile link
+  mobileMenu.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (a) closeMenu();
+  });
+
+  // Close on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+}
+
